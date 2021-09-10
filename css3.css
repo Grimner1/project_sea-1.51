@@ -1,0 +1,271 @@
+/* =========================================общее */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+/* ============================================= body */
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(231, 185, 125);
+  background: rgb(231, 185, 125) url(map.png) repeat-y;
+  background-size: cover;
+}
+
+#body1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-width: 900px;
+}
+/* ================================================= message block */
+#messageDiv {
+  display: flex;
+  width: 300px;
+  height: 400px;
+  background: rgba(34, 60, 80, 0) url(scroll2.png) no-repeat;
+  background-size: contain;
+  /* box-shadow: 40px 40px 10px 0px rgba(34, 60, 80, 0.25); */
+}
+
+#message {
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(90, 64, 7);
+  letter-spacing: 2px;
+  margin: auto;
+  width: 70%;
+  height: 50%;
+  font-family: "matura mt script capitals";
+}
+
+/* ============================================================ board block */
+
+#board {
+  align-content: space-around;
+  height: 800px;
+  width: 870px;
+  background: rgba(34, 60, 80, 0) url(scroll1.png) no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  position: relative;
+  /* box-shadow: 40px 40px 10px 0px rgba(34, 60, 80, 0.25); */
+}
+
+.tabl1 {
+  display: flex;
+  top: 1%;
+  left: 5%;
+  margin: auto;
+  font-size: 1em;
+  text-align: center;
+}
+
+.tabl1 td {
+  border: 1px solid black;
+  border-radius: 10%;
+  width: 70px;
+  height: 70px;
+}
+
+#formInput {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  margin: 0px 70px 50px 0px;
+  padding: 10px;
+  border: 3px solid rgba(136, 87, 31, 0);
+  border-radius: 50%;
+  background: rgba(136, 87, 31, 0);
+}
+
+#input {
+  position: relative;
+  width: 250px;
+  height: 40px;
+  margin: 3px 10px 3px 0;
+  padding: 0;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  background: rgba(231, 97, 53, 0);
+  text-align: center;
+  border-radius: 40%;
+}
+
+#input::placeholder {
+  color: rgb(66, 66, 66);
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+#fire {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  margin: 3px 10px 3px 0;
+  padding: 0;
+  font-size: 1em;
+  background-color: rgba(255, 8, 8, 0);
+  font-weight: 700;
+  border-radius: 50%;
+  color: rgb(66, 66, 66);
+}
+
+.tabl1 .A0 {
+  color: rgb(90, 64, 7);
+  border: 1px solid black;
+  border-radius: 0%;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+#z00 {
+  border: 0px;
+  background: rgba(0, 100, 0, 0);
+}
+
+/* ======================================================== tabl2 block */
+
+#tabl2 {
+  align-content: space-around;
+  display: flex;
+  background: rgba(34, 60, 80, 0) url(scroll3.png) no-repeat;
+  background-size: contain;
+  padding: 40px 130px 50px 130px;
+  /* box-shadow: 40px 40px 10px 0px rgba(34, 60, 80, 0.25); */
+}
+
+.tabl2 {
+  position: relative;
+  display: flex;
+  border: 5px solid rgba(168, 95, 46, 0);
+  border-spacing: 10px;
+  background: rgba(175, 111, 28, 0);
+  border-radius: 10%;
+  min-width: 298px;
+  min-height: 298px;
+}
+
+.tabl2 td {
+  position: relative;
+  border: 0px solid rgba(43, 165, 60, 0.678);
+  border-radius: 10%;
+  width: 60px;
+  height: 60px;
+  background: rgba(35, 99, 32, 0) url("ship.png") no-repeat;
+  background-size: cover;
+}
+
+/* ==================================================== JS shoot block */
+
+.miss {
+  background: url("miss.png") no-repeat;
+  background-size: cover;
+  animation: hit 2s;
+}
+
+.hit {
+  background: url("ship.png") no-repeat;
+  background-size: cover;
+  animation: hit 2s;
+}
+
+#miss {
+  background: url("miss.png") no-repeat;
+  background-size: cover;
+  animation: hit 2s;
+}
+
+@keyframes hit {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#board {
+  animation: hit 2s;
+}
+
+#messageDiv {
+  animation: hit 4s;
+}
+
+#tabl2 {
+  animation: hit 6s;
+}
+
+/* =================================================================animation */
+
+.miss:hover {
+  box-shadow: 0px 0px 100px 30px rgba(187, 57, 57, 1);
+  /* animation: hit 3s; */
+}
+
+.hit:hover {
+  box-shadow: 0px 0px 20px 5px rgba(22, 82, 194, 1);
+  /* animation: hit 3s; */
+}
+
+.cell:hover {
+  box-shadow: 0px 0px 100px 30px rgba(180, 187, 57, 1);
+  /* animation: hit 3s; */
+}
+
+/* ================================================shadow */
+
+.shadow-block {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-width: 900px;
+  position: absolute;
+  left: calc(50% - 630px);
+  z-index: -1;
+}
+
+.shadow-left {
+  width: 200px;
+  height: 350px;
+  /* border: 3px solid red; */
+  position: relative;
+  right: 175px;
+  box-shadow: 40px 40px 20px 10px rgba(34, 60, 80, 0.8);
+  animation: hit 2s;
+}
+
+.shadow-center {
+  width: 600px;
+  height: 700px;
+  /* border: 3px solid red; */
+  box-shadow: 80px 40px 20px 60px rgba(34, 60, 80, 0.8);
+  animation: hit 2s;
+}
+
+.shadow-right {
+  width: 470px;
+  height: 300px;
+  /* border: 3px solid red; */
+  position: relative;
+  left: 180px;
+  box-shadow: 60px 40px 20px 40px rgba(34, 60, 80, 0.8);
+  animation: hit 2s;
+}
+
+@media();
